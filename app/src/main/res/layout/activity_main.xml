@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#efefef"
-    tools:context=".MainActivity">
+    tools:context=".MatrixApiTestActivity">
 
     <com.treech.custom.viewstudy.view.ShadowLayout
         android:id="@+id/shadowLayout"
