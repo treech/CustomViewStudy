@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="netView">
+
+        <!--网格颜色-->
+        <attr name="netColor" format="color"/>
+
+        <!--覆盖区颜色-->
+        <attr name="overlayColor" format="color"/>
+
+        <!--覆盖区圆圈颜色-->
+        <attr name="overlayCircleColor" format="color"/>
+
+        <!--覆盖区圆圈半径-->
+        <attr name="overlayCircleRadius" format="integer"/>
+
+        <!--覆盖区透明度-->
+        <attr name="overlayAlpha" format="integer"/>
+
+        <!--文本颜色-->
+        <attr name="textColor" format="color"/>
+
+        <!--文本字体大小-->
+        <attr name="textSize" format="integer"/>
+
+        <!--内网数量-->
+        <attr name="intervalCount" format="integer"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="MyTextView2">
+        <attr name="text_size" format="dimension"/>
+    </declare-styleable>
+
+    <!--阴影布局 -->
+    <declare-styleable name="ShadowLayout">
+        <!-- 阴影颜色-->
+        <attr name="shadowColor" format="color"/>
+        <!-- 圆角大小，默认无圆角0-->
+        <attr name="shadowRadius" format="dimension"/>
+        <!-- 模糊半径 -->
+        <attr name="blurRadius" format="dimension" />
+        <!-- 是否有点击效果-->
+        <attr name="hasEffect" format="boolean"/>
+        <attr name="bgColor" format="color"/>
+        <!-- 水平位移-->
+        <attr name="xOffset" format="dimension"/>
+        <!--竖直位移 -->
+        <attr name="yOffset" format="dimension"/>
+    </declare-styleable>
+
+</resources>
