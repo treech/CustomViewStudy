@@ -8,6 +8,11 @@ import android.util.Log;
 
 import java.util.Arrays;
 
+/**
+ * 参考blog
+ * https://blog.csdn.net/u012440207/article/details/88255881
+ * https://blog.csdn.net/sinat_31057219/article/details/82656796
+ */
 public class MatrixApiTestActivity extends Activity {
 
     private static final String TAG = "MatrixApiTestActivity";
@@ -65,6 +70,86 @@ public class MatrixApiTestActivity extends Activity {
         boolean result = matrix4.mapRect(rectF);
         Log.d(TAG, "after:mapRect:" + rectF.toString());
         Log.d(TAG, "result:" + result);
+        test1();
+        test2();
+        test3();
+        test4();
+        test5();
+        test6();
+    }
+
+
+    private void test1(){
+        Log.e("matrix", "=======================单位矩阵===========================");
+        Matrix matrix = new Matrix();
+        Log.e("matrix", "是否单位矩阵========" + matrix.isIdentity());//true
+        matrix.postTranslate(200, 0);
+        Log.e("matrix", "是否单位矩阵========" + matrix.isIdentity());//false
+    }
+
+    private void test2(){
+        Log.e("matrix", "=======================平移===========================");
+        Matrix matrix = new Matrix();
+        Matrix invert = new Matrix();
+        matrix.setTranslate(200, 500);
+
+        Log.e("matrix", "before - matrix ===" + matrix.toShortString());
+        //[1.0, 0.0, 200.0][0.0, 1.0, 500.0][0.0, 0.0, 1.0]
+        matrix.invert(invert);
+        Log.e("matrix", "after  - invert ===" + invert.toShortString());
+        //[1.0, 0.0, -200.0][0.0, 1.0, -500.0][0.0, 0.0, 1.0]
+    }
+
+    private void test3(){
+        Log.e("matrix", "=======================缩放===========================");
+        Matrix matrix = new Matrix();
+        Matrix invert = new Matrix();
+        matrix.setScale(2, 2);
+
+        Log.e("matrix", "before - matrix ===" + matrix.toShortString());
+        //[2.0, 0.0, 0.0][0.0, 2.0, 0.0][0.0, 0.0, 1.0]
+        matrix.invert(invert);
+        Log.e("matrix", "after  - invert ===" + invert.toShortString());
+        //[0.5, 0.0, -0.0][0.0, 0.5, -0.0][0.0, 0.0, 1.0]
+    }
+
+    private void test4(){
+        Log.e("matrix", "=========================斜切=========================");
+        Matrix matrix = new Matrix();
+        Matrix invert = new Matrix();
+        matrix.setSkew(20, 20);
+
+        Log.e("matrix", "before - matrix ===" + matrix.toShortString());
+        //[1.0, 20.0, 0.0][20.0, 1.0, 0.0][0.0, 0.0, 1.0]
+        matrix.invert(invert);
+        Log.e("matrix", "after  - invert ===" + invert.toShortString());
+        //[-0.0025062656, 0.050125312, -0.0][0.050125312, -0.0025062656, -0.0][0.0, 0.0, 1.0]
+    }
+
+    private void test5(){
+        Log.e("matrix", "=======================旋转90°===========================");
+        Matrix matrix = new Matrix();
+        Matrix invert = new Matrix();
+        matrix.setRotate(90);
+
+        Log.e("matrix", "before - matrix ===" + matrix.toShortString());
+        //[0.0, -1.0, 0.0][1.0, 0.0, 0.0][0.0, 0.0, 1.0]
+        matrix.invert(invert);
+        Log.e("matrix", "after  - invert ===" + invert.toShortString());
+        //[0.0, 1.0, -0.0][-1.0, 0.0, 0.0][0.0, 0.0, 1.0]
+    }
+
+    private void test6(){
+        Log.e("matrix", "=======================旋转-90°===========================");
+        Matrix matrix = new Matrix();
+        Matrix invert = new Matrix();
+        matrix.setRotate(-90);
+
+        Log.e("matrix", "before - matrix ===" + matrix.toShortString());
+        //[0.0, 1.0, 0.0][-1.0, 0.0, 0.0][0.0, 0.0, 1.0]
+        matrix.invert(invert);
+        Log.e("matrix", "after  - invert ===" + invert.toShortString());
+        //[0.0, -1.0, 0.0][1.0, 0.0, -0.0][0.0, 0.0, 1.0]
     }
 
 }

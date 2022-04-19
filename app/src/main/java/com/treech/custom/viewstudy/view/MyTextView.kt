@@ -31,7 +31,7 @@ class MyTextView : View {
         paint.textSize = 50f
         paint.color = Color.GRAY
         val textWidth = paint.measureText("YangLe'Blog'")
-        val baseLineY = Math.abs(paint.descent() + paint.ascent()) / 2
+        val baseLineY = -(paint.descent() + paint.ascent()) / 2
         canvas.drawText("YangLe'Blog'", -textWidth / 2, baseLineY, paint)
     }
 }

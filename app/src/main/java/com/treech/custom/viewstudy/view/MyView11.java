@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;
@@ -54,7 +55,7 @@ public class MyView11 extends View {
          canvas.drawText("Android \'s Blog", baseLineX, baseLineY, paint);
          **/
 
-        /**
+
          int baseLineX = 0;
          int baseLineY = 200;
 
@@ -92,26 +93,26 @@ public class MyView11 extends View {
          //画bottom
          paint.setColor(Color.RED);
          canvas.drawLine(baseLineX, bottom, mWidth, bottom, paint);
-         **/
 
-        Rect rect = new Rect(100, 100, 500, 500);//画一个矩形
-        Paint rectPaint = new Paint();
-        rectPaint.setColor(Color.BLUE);
-        rectPaint.setStyle(Paint.Style.FILL);
-        canvas.drawRect(rect, rectPaint);
 
-        Paint textPaint = new Paint();
-        textPaint.setColor(Color.WHITE);
-        textPaint.setTextSize(50);
-        textPaint.setStyle(Paint.Style.FILL);
-        //该方法即为设置基线上那个点究竟是left,center,还是right  这里我设置为center
-        textPaint.setTextAlign(Paint.Align.CENTER);
-
-        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
-
-//        int baseLineY = (int) (rect.centerY() +(bottom-top)/2-bottom);//基线中间点的y轴计算公式
-        int baseLineY = (int) (rect.centerY() - (fontMetrics.ascent + fontMetrics.descent) / 2);//基线中间点的y轴计算公式
-
-        canvas.drawText("Hello World!", rect.centerX(), baseLineY, textPaint);
+//        Rect rect = new Rect(100, 100, 500, 500);//画一个矩形
+//        Paint rectPaint = new Paint();
+//        rectPaint.setColor(Color.BLUE);
+//        rectPaint.setStyle(Paint.Style.FILL);
+//        canvas.drawRect(rect, rectPaint);
+//
+//        Paint textPaint = new Paint();
+//        textPaint.setColor(Color.WHITE);
+//        textPaint.setTextSize(50);
+//        textPaint.setStyle(Paint.Style.FILL);
+//        //该方法即为设置基线上那个点究竟是left,center,还是right  这里我设置为center
+//        textPaint.setTextAlign(Paint.Align.CENTER);
+//
+//        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+//
+////        int baseLineY = (int) (rect.centerY() +(bottom-top)/2-bottom);//基线中间点的y轴计算公式
+//        int baseLineY = (int) (rect.bottom + (fontMetrics.ascent + fontMetrics.descent) / 2);//基线中间点的y轴计算公式
+//
+//        canvas.drawText("Hello World!", rect.centerX(), baseLineY, textPaint);
     }
 }
